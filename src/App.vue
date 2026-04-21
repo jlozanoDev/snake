@@ -189,7 +189,7 @@ onBeforeUnmount(() => {
         <h1>Snake</h1>
 
         <div class="hud-row">
-          <p class="score">Puntuación <strong>{{ score }}</strong>
+          <p class="score">Puntuación <strong>{{ score }}</strong></p>
           <button @click="resetGame">Nuevo juego</button>
         </div>
 
