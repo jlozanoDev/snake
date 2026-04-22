@@ -154,10 +154,14 @@ function onKeydown(event) {
     ArrowUp: { x: 0, y: -1 },
     ArrowDown: { x: 0, y: 1 },
     ArrowLeft: { x: -1, y: 0 },
-    ArrowRight: { x: 1, y: 0 }
+    ArrowRight: { x: 1, y: 0 },
+    KeyW: { x: 0, y: -1 },
+    KeyS: { x: 0, y: 1 },
+    KeyA: { x: -1, y: 0 },
+    KeyD: { x: 1, y: 0 }
   }
 
-  const next = map[event.key]
+  const next = map[event.key] || map[event.code]
   if (!next) return
 
   event.preventDefault()
@@ -189,7 +193,7 @@ onBeforeUnmount(() => {
         <h1>Snake</h1>
 
         <div class="hud-row">
-          <p class="score">Puntaje <strong>{{ score }}</strong></p>
+          <p class="score">Puntuación <strong>{{ score }}</strong></p>
           <button @click="resetGame">Nuevo juego</button>
         </div>
 
@@ -213,7 +217,7 @@ onBeforeUnmount(() => {
         />
       </div>
 
-      <p class="help">Controles: ← ↑ ↓ →</p>
+      <p class="help">Controles: ← ↑ ↓ → o W A S D</p>
     </section>
   </main>
 </template>
